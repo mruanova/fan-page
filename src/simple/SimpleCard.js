@@ -13,7 +13,6 @@ import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import red from '@material-ui/core/colors/red';
-
 import puro_desamor from '../assets/puro_desamor.jpg';
 import nnvav from '../assets/nnvav.jpg';
 import covers from '../assets/covers.jpg';
@@ -52,6 +51,7 @@ const styles = {
     marginBottom: 12,
   },
   media: {
+    backgroundPosition: 'initial',
     height: 0,
     paddingTop: '56.25%', // 16:9
   },
