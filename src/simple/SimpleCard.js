@@ -14,8 +14,11 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import red from '@material-ui/core/colors/red';
 
+import puro_desamor from '../assets/puro_desamor.jpg';
+import nnvav from '../assets/nnvav.jpg';
 import covers from '../assets/covers.jpg';
 import obsesion from '../assets/obsesion.jpg';
+import mun from '../assets/mun.jpg';
 
 const styles = {
   card: {
@@ -50,28 +53,42 @@ const styles = {
 function SimpleCard(props) {
   const { classes } = props;
   const data = [
-    { album: 'Zemmoa Covers', song: 'Obsesión', link: 'https://www.youtube.com/watch?v=j-ZGwzhD9Go' },
-    { album: 'Zemmoa Covers', song: 'Qué Hice para Merecer Esto?', link: 'https://www.youtube.com/watch?v=j-ZGwzhD9Go' },
-    { album: 'Zemmoa Covers', song: 'Ni Tú Ni Nadie', link: 'https://www.youtube.com/watch?v=j-ZGwzhD9Go' },
-    { album: 'Zemmoa Covers', song: 'No Pensar En Ti', link: 'https://www.youtube.com/watch?v=j-ZGwzhD9Go' },
-    { album: 'Zemmoa Covers', song: '+D10', link: 'https://www.youtube.com/watch?v=j-ZGwzhD9Go' },
-    { album: 'Zemmoa Covers', song: 'Ciencia Ficción', link: 'https://www.youtube.com/watch?v=j-ZGwzhD9Go' },
-    { album: 'Zemmoa Covers', song: 'Hombre De Hojalata', link: 'https://www.youtube.com/watch?v=j-ZGwzhD9Go' },
-    { album: 'Zemmoa Covers', song: 'Te Enterraré El Tacón', link: 'https://www.youtube.com/watch?v=j-ZGwzhD9Go' },
-    { album: 'Zemmoa Covers', song: 'Ay Mínimo Escribe Un Adios!', link: 'https://www.youtube.com/watch?v=j-ZGwzhD9Go' },
-    { album: 'Zemmoa Covers', song: 'Careless Whisper', link: 'https://www.youtube.com/watch?v=j-ZGwzhD9Go' },
-    { album: 'Zemmoa Covers', song: 'Veneno', link: 'https://www.youtube.com/watch?v=j-ZGwzhD9Go' },
-    { album: 'Zemmoa Covers', song: 'Ya No Más!', link: 'https://www.youtube.com/watch?v=j-ZGwzhD9Go' },
-    { album: 'Zemmoa Covers', song: 'ZEUZ', link: 'https://www.youtube.com/watch?v=j-ZGwzhD9Go' },
+    { album: 'Puro Desamor', song: 'Zeuz', link: 'https://youtu.be/WPTmUuPoR34' },
+    { album: 'Puro Desamor', song: 'Ya No Más!', link: 'https://youtu.be/sg6LYQzfoK0' },
+    { album: 'Puro Desamor', song: 'Veneno', link: 'https://youtu.be/QW_w9tQGj70' },
+    { album: 'MUN Compilado', song: 'Careless Whisper', link: 'https://youtu.be/gABt-73p_mI' },
+    { album: 'Puro Desamor', song: 'Ay Mínimo Escribe Un Adios!', link: 'https://youtu.be/oo8wfHthTTk' },
+    { album: 'Puro Desamor', song: 'Te Enterraré El Tacón', link: 'https://youtu.be/-3V66nWHacs' },
+    { album: 'NNVAV', song: 'Hombre De Hojalata', link: 'https://youtu.be/ogBxmxz8NqE' },
+    { album: 'NNVAV', song: 'Ciencia Ficción', link: 'https://youtu.be/TO8147K6Kxw' },
+    { album: 'NNVAV', song: '+D10', link: 'https://youtu.be/nQO4ac1YS4g' },
+    { album: 'Zemmoa Covers', song: 'No Pensar En Ti', link: 'https://youtu.be/7RaP5qfxBvI' },
+    { album: 'Zemmoa Covers', song: 'Ni Tú Ni Nadie', link: 'https://youtu.be/KdPU_PYbfdM' },
+    { album: 'Zemmoa Covers', song: 'Qué Hice para Merecer Esto?', link: 'https://youtu.be/fTyQJyUOTJ0' },
+    { album: 'Zemmoa Covers', song: 'Obsesión', link: 'https://youtu.be/j-ZGwzhD9Go' },
   ];
   let indents = [];
   data.forEach((element, index) => {
+    let avatar = '';
+    switch (data[index].album) {
+      case 'Puro Desamor':
+        avatar = puro_desamor;
+        break;
+      case 'NNVAV':
+        avatar = nnvav;
+        break;
+      case 'Zemmoa Covers':
+        avatar = covers;
+        break;
+      default:
+        avatar = mun;
+    }
     console.log(index, element)
     indents.push(
       <Card className={classes.card} key={index}>
         <CardHeader title={data[index].song} subheader={data[index].album} action={<IconButton></IconButton>}
-          avatar={<Avatar aria-label="zemmoa" className={classes.avatar} alt="zemmoa" src={covers}>Z</Avatar>}
-        />
+          avatar={<Avatar aria-label="zemmoa" className={classes.avatar} alt="zemmoa" src={avatar}></Avatar>}>
+        </CardHeader>
         <CardMedia className={classes.media} image={obsesion} title={data[index].song} />
         <CardActions>
           <Button size="small" onClick={function () { window.open(data[index].link, '_blank') }}>Youtube</Button>
