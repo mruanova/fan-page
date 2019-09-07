@@ -17,9 +17,10 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
+import Icon from '@material-ui/core/Icon';
 import MailIcon from '@material-ui/icons/Mail';
 import SimpleCard from './SimpleCard';
-// font awesome <i class="fab fa-youtube fa-3x"></i>
+// <Icon className={classNames(classes.icon, 'fab fa-youtube fa-3x')} />
 // import SimpleBadge from './SimpleBadge';
 // <SimpleBadge></SimpleBadge>
 const drawerWidth = 240;
