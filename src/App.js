@@ -4,6 +4,7 @@ import MiniDrawer from './simple/SimpleDrawer';
 
 class App extends Component {
   render() {
+    // this.props.history.push(`/contact`);
     let indents = [];
     indents = (
       <div className="App">

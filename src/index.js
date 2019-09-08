@@ -11,38 +11,15 @@ import Notfound from './notfound';
 /**
  * Redirecting in React - Annee Barrett - Medium
  * https://medium.com › redirecting-in-react-4de5e517354a
- * redirectToTarget = () => {this.props.history.push(`/target`)}
 */
 const routing = (
     <Router>
-        <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/users">Users</Link>
-                </li>
-                <li>
-                    <Link to="/users/1">User 1 </Link>
-                </li>
-                <li>
-                    <Link to="/users/2">User 2 </Link>
-                </li>
-                <li>
-                    <Link to="/users/3">User 3 </Link>
-                </li>
-                <li>
-                    <NavLink activeClassName="active" to="/contact">Contact</NavLink>
-                </li>
-            </ul>
-            <Switch>
-                <Route exact path="/" component={App} />
-                <Route exact path="/users/:id" component={Users} />
-                <Route path="/contact" component={Contact} />
-                <Route component={Notfound} />
-            </Switch>
-        </div>
+        <Switch>
+            <Route exact path="/" component={App} />
+            <Route exact path="/users/:id" component={Users} />
+            <Route path="/contact" component={Contact} />
+            <Route component={Notfound} />
+        </Switch>
     </Router>
 );
 

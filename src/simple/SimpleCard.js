@@ -113,7 +113,6 @@ function SimpleCard(props) {
       default:
         avatar = mun;
     }
-    console.log(index, element)
     indents.push(
       <Card className={classes.card} key={index}>
         <CardHeader title={data[index].song} subheader={data[index].album} action={<IconButton></IconButton>}
